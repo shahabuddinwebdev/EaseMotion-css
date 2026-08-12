@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #0f172a;
+  font-family: Arial, sans-serif;
+}
+
+/* Creates the 3D perspective */
+.card-container {
+  perspective: 1000px;
+}
+
+/* Card */
+.card {
+  width: 320px;
+  padding: 35px;
+
+  text-align: center;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #1e293b,
+    #111827
+  );
+
+  color: white;
+
+  transform:
+    rotateX(0deg)
+    rotateY(0deg);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+
+  transform-style: preserve-3d;
+}
+
+/* 3D hover */
+.card:hover {
+  transform:
+    perspective(1000px)
+    rotateX(8deg)
+    rotateY(-10deg)
+    translateY(-8px);
+
+  box-shadow:
+    20px 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+
+  transform: translateZ(30px);
+
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-icon {
+  transform: translateZ(60px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+
+  transform: translateZ(25px);
+}
+
+.card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 25px;
+
+  transform: translateZ(15px);
+}
+
+.card button {
+  padding: 12px 25px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 15px;
+  cursor: pointer;
+
+  transform: translateZ(30px);
+
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background: #3b82f6;
+}
